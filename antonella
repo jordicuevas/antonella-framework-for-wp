@@ -19,6 +19,8 @@ class Antonella
         'CHANGELOG.md',
         'CONTRIBUTING.md',
         'Gruntfile.js',
+        'mix-manifest.json',
+        'webpack.mix.js',
         'LICENSE',
         'readme.md',
         'README.md',
@@ -34,12 +36,18 @@ class Antonella
         '.git',
         '.github',
         'wp-test',
+        'node_modules',
+        'resources'.DIRECTORY_SEPARATOR.'js',
+        'resources'.DIRECTORY_SEPARATOR.'css',
         'vendor'.DIRECTORY_SEPARATOR.'vlucas',
     ];
     protected $dirs_to_exclude_linux = [
         '.git',
         '.github',
         'wp-test',
+        'node_modules',
+        'resources'.DIRECTORY_SEPARATOR.'js',
+        'resources'.DIRECTORY_SEPARATOR.'css',
         'vendor'.DIRECTORY_SEPARATOR.'vlucas',
     ];
     protected $testdir = 'wp-test';
