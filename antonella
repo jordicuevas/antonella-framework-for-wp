@@ -40,6 +40,9 @@ class Antonella
         'resources'.DIRECTORY_SEPARATOR.'js',
         'resources'.DIRECTORY_SEPARATOR.'css',
         'vendor'.DIRECTORY_SEPARATOR.'vlucas',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'polyfill-php80',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'polyfill-mbstring',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'var-dumper',
     ];
     protected $dirs_to_exclude_linux = [
         '.git',
@@ -49,6 +52,9 @@ class Antonella
         'resources'.DIRECTORY_SEPARATOR.'js',
         'resources'.DIRECTORY_SEPARATOR.'css',
         'vendor'.DIRECTORY_SEPARATOR.'vlucas',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'polyfill-php80',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'polyfill-mbstring',
+        'vendor'.DIRECTORY_SEPARATOR.'symfony'.DIRECTORY_SEPARATOR.'var-dumper',
     ];
     protected $testdir = 'wp-test';
     protected $understant = 'Antonella no understand you. please read the manual in https://antonellaframework.com';
@@ -369,6 +375,9 @@ if (!function_exists('{$data[2]}')) {
             case 'blade':
                 return $this->RemoveBlade();
                 break;
+            case 'dd':
+                return $this->RemoveDD();
+                break;
 
             default:
                 echo $this->understant;
@@ -381,6 +390,9 @@ if (!function_exists('{$data[2]}')) {
         switch ($data[2]) {
             case 'blade':
                 return $this->AddBlade();
+                break;
+            case 'dd':
+                return $this->AddDD();
                 break;
             case 'action':
                 return $this->AddAction($data);
@@ -414,6 +426,21 @@ if (!function_exists('{$data[2]}')) {
             echo "Remember: if you need add blade only  type 'php antonella add blade' ";
             exit;
         }
+    }
+
+    public function AddDD()
+    {
+        echo "\n";
+        echo "Adding Var-Dumper dd() ... \n";
+        exec('composer require symfony/var-dumper --dev');
+        echo "Var-Dumper dd() Added! \n";
+    }
+
+    public function RemoveDD()
+    {
+        echo "Removing Var-Dumper dd()... \n";
+        exec('composer remove symfony/var-dumper');
+        echo "Var-Dumper dd() Removed! \n";
     }
 
     public function AddCMB2()
@@ -671,8 +698,8 @@ if (!function_exists('{$data[2]}')) {
         echo "\033[00;37m                        Generate a new php Helper's file. \033[0m \n";
         echo "\033[00;32m    remove: \033[0m";
         echo "\033[00;37m                        Remove Antonella's Modules. Now only is possible remove blade \033[0m \n";
-        echo "\033[00;32m    add: \033[0m";
-        echo "\033[00;37m                           Add Antonella's Modules. Now only is possible add blade \033[0m \n";
+        echo "\033[00;32m    add: [blade] / [dd] \033[0m";
+        echo "\033[00;37m            Add Antonella's Modules. \033[0m \n";
         echo "\033[00;32m    widget: \033[0m";
         echo "\033[00;37m                        Generate a new php file's Class for use Widget \033[0m \n";
         echo "\033[00;32m    serve: \033[0m";
