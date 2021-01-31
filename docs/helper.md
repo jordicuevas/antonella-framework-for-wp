@@ -10,6 +10,21 @@ d() para el manejo de funciones de debug (Dump)
 dd() para el mandejo de funciones de debug (Dump and Die)
 ```
 
+```text
+Para que los Helper preinstalads funcionen deben instalarse sus módulos
+en el caso de View:
+```
+```bash
+php antonella add blade
+```
+```text
+en el caso de d() y dd()
+```
+```bash
+php antonella add dd
+```
+
+
 ## Como registrar mis propios helpers
 
 ```bash
