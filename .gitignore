@@ -3,8 +3,10 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+/cypress/
 vendor/*
 composer.lock
+cypress.json
 .env
 wp-test/*
 wp-cli.phar

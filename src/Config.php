@@ -16,7 +16,7 @@ class Config
      * Language Option
      * define a unique word for translate call.
      */
-    public $language_name = 'antonella';
+    public $language_name = 'anto';
     /**
      * Plugin text prefix
      * define a unique word for this plugin.

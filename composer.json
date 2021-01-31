@@ -26,6 +26,7 @@
     ],
     "license": "MIT",
     "require": {
+        "wp-cli/i18n-command": "^2.2"
     },
     "require-dev":{
         "vlucas/phpdotenv":"^3.5"

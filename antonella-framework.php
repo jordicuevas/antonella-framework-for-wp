@@ -12,7 +12,7 @@ Author URI:
 Framework: Antonella Framework for WP
 Framework URI: http://antonellaframework.com
 License: GPL2+
-Text Domain: Carlos Herrera
+Text Domain: anto
 Domain Path: /languages
 */
 
