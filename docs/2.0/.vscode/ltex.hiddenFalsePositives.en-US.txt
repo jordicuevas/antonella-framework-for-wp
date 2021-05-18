@@ -1,0 +1,5 @@
+{"rule":"SENTENCE_FRAGMENT","sentence":"^\\QWhere \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is the name of our plugin\\E$"}
+{"rule":"SENTENCE_FRAGMENT","sentence":"^\\QIf our plugin is going to make use of gutenberg it is necessary to install the dependencies using node.\\E$"}
+{"rule":"SENTENCE_FRAGMENT","sentence":"^\\QIf our plugin is going to make use of Gutenberg it is necessary to install the dependencies using node.\\E$"}
+{"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\QIt is now possible to change both the port(8010) and the locale(en_US) to any other\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QTo avoid conflicts with other plugins make sure to change the Antonella namespace  Antonella\\CH (default) to different one.\\E$"}

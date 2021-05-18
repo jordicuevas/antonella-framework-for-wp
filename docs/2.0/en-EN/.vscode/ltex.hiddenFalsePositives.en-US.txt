@@ -1,0 +1,2 @@
+{"rule":"WHITESPACE_RULE","sentence":"^\\QCreates a file \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q  with the block definition \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q1 Easily transpiling JavaScript with wp-scripts 2 Creating your first Gutenberg Block with wp-scripts, JavaScript and React\\E$"}
