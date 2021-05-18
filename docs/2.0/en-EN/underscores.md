@@ -1,53 +1,53 @@
-# Creación de Theme
+# Creating a Theme
 
-Ahora es posible crear un theme basado en _s ([underscores](https://developer.wordpress.org/cli/commands/scaffold/_s/))
+It is now possible to create a theme based on \_s ([underscores](https://developer.wordpress.org/cli/commands/scaffold/_s/))
 
-Para más información visite el [repositorio oficial en git](https://github.com/automattic/_s)
+For more information visit the [official git repository](https://github.com/automattic/_s)
 
-## Ejemplo de uso
+## Examples
 
 ```bash
 php antonella make:theme <slug> [--activate|-a] [--enable-network|-n] [--theme_name=<title>] [--author=<full-name>] [--author_uri=<uri>] [--sassify] [--woocommerce] [--force]
 ```
 
-Este comando no es más que un wrapper de `wp scaffold <comand>`, eres libre de usar uno u otro.
+This command is just a wrapper for `wp scaffold <command>`, you are free to use one or another.
 
-Nota. No olvides pasar el argumento --path=wp-test para indicar donde se encuentra la instalación de tu WP
+Note: Don't forget to pass the --path=wp-test argument to indicate where your WP installation is located.
 
 ```bash
-php wp-cli.phar scaffold _s sample-theme --theme_name="Sample Theme" --path=wp-test` 
+php wp-cli.phar scaffold _s sample-theme --theme_name="Sample Theme" --path=wp-test`
 ```
 
-## Opciones
+## Options
 
 ```bash
-<slug> 
-	El slug para el nuevo tema, y usado para prefijar funciones ( para evitar conflictos ) y como clave del textdomain (traducciones).
-[--activate] 
-	Activar el tema recién descargado.
-[--enable-network]	
-	Habilita el tema recién descargado para toda la red
+<slug>
+	The slug for the new theme, and used to prefix functions (to avoid conflicts) and as a key for the textdomain (translations).
+[--activate]
+	Activate the newly downloaded theme.
+[--enable-network]
+	Enables the newly downloaded theme for the entire network
 [--theme_name=<title>]
-	Establece el Nombre del Theme dentro del style.css
+	Set the Theme Name inside style.css
 [--author=<full-name>]
-	Estable el Author del Theme dentro del style.css
+	Set the Theme Author inside style.css
 [--author_uri=<uri>]
-	Estable el Author Uri dentro del style.css
+	Set the Author Uri inside style.css
 [--sassify]
-	Incluye los style como sass
+	Includes styles as sass
 [--woocommerce]
-	Si queremos que nuestro theme sea compatible con woocommerce
+	If we want our theme to be compatible with woocommerce
 [--debug]
-	Muestra el comando a ser ejecutado sin ejecutarse
+	Displays the command to be run without executing it
 ```
 
-### Ejemplos
+### Examples
 
 ```bash
-php antonella make:theme sample-theme --theme_name="Sample Theme" --author="Carlos Herrera" 
+php antonella make:theme sample-theme --theme_name="Sample Theme" --author="Carlos Herrera"
 ```
 
-Genera el theme de nombre "Sample Theme" y author "Carlos Herrera"
+Generate the theme named "Sample Theme" and author "Carlos Herrera".
 
 style.css
 
@@ -77,33 +77,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 ```
 
-# Operar con los Themes
+# Working with the themes
 
-Ahora es posible listar y eliminar theme
+Now is possible to list and delete a theme
 
-## Listar themes
+## List themes
 
 ```bash
 php antonella theme:list
 ```
 
-### Opciones
+### Options
 
 ```bash
 [--filter=key1,value1:key2,value2]
-	Permite filtrar por distintas key,value. --filter=status,inactive:update,none
-	Este comando genera, la siguinete salida. --status=inactive --update=none
+	Allows filtering by different key,value. --filter=status,inactive:update,none
+	This command generates the following output. --status=inactive --update=none
 [--field=<field>]
-	Imprime el valor de un solo campo para cada tema
+	Prints the value of a single field for each theme
 [--fields=<fields>]
-	Imprime sólo los campos específicos. Ejemplo --fields=name,status,version
+	Prints only the specific fields. Example --fields=name,status,version
 [--format=table|csv|json|count|yaml]
-	Renderiza la salida a uno de los siguientes formatos. Por defecto es table
+	Renders the output to one of the following formats. Default is table
 ```
 
-Muestra todos los themes instalados (activos o no)
+Displays all installed themes (active or not)
 
-### Ejemplos
+### Examples
 
 ```bash
 php antonella theme:list --filter=status,inactive:update,none
@@ -111,44 +111,44 @@ php antonella theme:list --filter=status,inactive --field=name
 php antonella theme:list --filter=status,inactive --fields=name,status --format=json
 ```
 
-## Eliminar theme
+## Deleting a theme
 
 ```bash
 php antonella theme:delete <theme>
 ```
 
-### Opciones
+### Options
 
 ```bash
 [<theme>[,<theme>]]
-	Uno o más themes para eliminar. Lista de theme separados por coma
+	One or more themes to delete. List of themes separated by comma
 [-all]
-	Si `--all` está presente, se eliminarán todos los temas excepto el tema activo
-	Es excluyente de [<theme>[,<theme>]]
+	If `--all` is present, all themes except the active theme will be removed.
+	Is exclusive of [<theme>[,<theme>]]]
 [--force]
-	Si `--force` está presente, el theme active será también eliminado
-	Es excluyente de [<theme>[,<theme>]]
-	Sólo es válido si está presente la opción --all
+	If `--force` is present, the active theme will also be removed.
+	Is exclusive of [<theme>[,<theme>]]]
+	Only valid if the --all option is present.
 ```
 
-### Ejemplos
+### Examples
 
 ```bash
 php antonella theme:delete twentytwenty,twentytwentyone
 ```
 
-Eliminará los themes, twentytwenty y twentytwentyone
+Deletes the themes twentytwenty y twentytwentyone
 
 ```bash
 php antonella theme:delete --all
 ```
 
-Elimina todos los themes excepto el theme activo
+Removes all themes except the active theme
 
 ```bash
 php antonella theme:delete --all --force
 ```
 
-Elimina todos los themes y el theme activo
+Deletes all themes including the active theme
 
-[Volver al índice](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/readme.md)
+[Go Back](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/en-EN/readme.md)

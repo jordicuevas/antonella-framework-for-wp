@@ -1,26 +1,26 @@
-# Creación de Widgets
+# Creating Widgets
 
-Antonella Frameworks nos permite crear widgets de una manera sencilla mediante el siguiente comando
+Antonella Frameworks allows us to create widgets in a simple way just running the following command
 
 ```bash
 php antonella make:widget MyWidget [--enque]
 ```
 
-Este comando creará el controlador `MyWidget.php` dentro de la carpeta src/Widgets, opcionalmente podemos pasarle
-el argumento --enque.
+This command will create the `MyWidget.php` Controller inside the src/Widgets folder, optionally we can pass the
+the --enque argument.
 
-## Argumentos
+## Arguments
 
---enque : Registra por nosotros el widget en la seccioón $widgets[] del fichero Config.php
+--enque : Register the widget in the $widgets[] section of the Config.php file.
 
-
-## Salida 
+## Output
 
 src/Widgets/MyWidget.php
+
 ```php
 <?php
 namespace Antonella\CH\Widgets;
-      
+
 class MyWidget extends \WP_Widget
 {
 	/**
@@ -38,7 +38,7 @@ class MyWidget extends \WP_Widget
 	[
 		//Example: 'title'=>'the best plugin', 'url'=>'https://antonellaframework.com'
 	];
-   
+
 	public function __construct()
 	{
 		parent::__construct('MyWidget', $this->name_widget, $this->options);
@@ -61,7 +61,7 @@ class MyWidget extends \WP_Widget
 		{
 			$instances[$key]= sanitize_text_field($new_instance[$key]);
 		}
-		return $instances;	
+		return $instances;
 	}
 	function widget($args, $instance) {
 		//Build the code for show the widget in plubic zone.
@@ -79,7 +79,7 @@ src/Config.php
 
 ```php
 <?php
-	
+
 ...
 
 /**
@@ -89,9 +89,9 @@ src/Config.php
  * @input array
  * @example public $widget = [__NAMESPACE__.'\YouClassWidget']  //only the class
  */
-public $widgets = [ 
+public $widgets = [
 	[__NAMESPACE__ . '\Widgets\MyWidget']
 ];
 ```
 
-[Volver al índice](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/readme.md)
+[Go Back](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/en-EN/readme.md)

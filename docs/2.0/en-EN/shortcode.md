@@ -1,23 +1,23 @@
-# Crear un ShortCode
+# Creating a ShortCode
 
-Para crear un shortcode ejecute el siguiente comando
+To create a Shortcode run the following command
 
 ```bash
 php antonella make:shortcode tag:MyController@method [--enque | -e]
 ```
 
-## Argumentos
+## Arguments
 
 ```text
-tag: Requerido. Nombre del ShortCode
-MyController: Requerido. Nombre del Controlador si no existe, éste es creado
-method: Requerido. Method static del Controlador (sino existe será creado) 	 	
---enque: Requerido. Registra el shortcode en la sección $shortcodes[] del fichero Config.php
+tag: Required. Name of the SHortcode
+MyController: Required. Name of the Controller if it does not exist, it is generated.
+method: Required. Static Method of the Controller (if it does not exist, it will be generated)
+--enque: Required.  Register the shortcode in the $shortcodes[] section of the Config.php file.
 ```
 
-Si el method es omitido se creará el method static short_code() dentro de la clase MyController.php
+If the method is omitted, the static short_code() method will be created inside the MyController.php class.
 
-### Ejemplo
+### Example
 
 ```bash
 php antonella make:shortcode saluda:MyController@short_code --enque
@@ -27,20 +27,20 @@ Out: src/Controllers/MyController.php
 
 ```php
 <?php
-    
+
 namespace Antonella\CH\Controllers;
-          
+
 class MyController
 {
-    
+
 	public function __construct()
 	{
 	}
-	
+
 	public static function short_code() {
 		// TODO
 	}
-	
+
 } /* generated with antollena framework */
 ```
 
@@ -48,9 +48,9 @@ Out: src/Config.php
 
 ```php
 <?php
-	
+
 ...
-	
+
 /**
  * add custom shortcodes
  * @input array
@@ -64,4 +64,4 @@ public $shortcodes = [
 ...
 ```
 
-[Volver al índice](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/readme.md)
+[Go Back](https://github.com/cehojac/antonella-framework-for-wp/tree/2.0/docs/2.0/en-EN/readme.md)
