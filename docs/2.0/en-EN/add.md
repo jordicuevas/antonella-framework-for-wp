@@ -16,7 +16,7 @@ Examples
 php antonella add blade
 ```
 
-This command is going to install blade, so we can use it in our templates
+This command is going to install blade, so it can be use in templates
 
 ```bash
 php antonella add dd
